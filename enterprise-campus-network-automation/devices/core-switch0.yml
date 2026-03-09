@@ -1,0 +1,24 @@
+hostname: Switch
+
+j2_template: core-switch.j2
+
+vlans:
+  - id: 10
+    name: users
+    svi_ip: 192.168.10.1
+    mask: 255.255.255.0
+
+  - id: 20
+    name: servers
+    svi_ip: 192.168.20.1
+    mask: 255.255.255.0
+
+  - id: 30
+    name: mgmt
+    svi_ip: 192.168.30.1
+    mask: 255.255.255.0
+
+  - id: 40
+    name: guest
+    svi_ip: 192.168.40.1
+    mask: 255.255.255.0

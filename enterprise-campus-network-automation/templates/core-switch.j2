@@ -1,1 +1,13 @@
+hostname {{ hostname }}
 
+{% for vlan in vlans %}
+vlan {{ vlan.id }}
+ name {{ vlan.name }}
+{% endfor %}
+
+{% for vlan in vlans %}
+interface vlan {{ vlan.id }}
+ description {{ vlan.name }} Gateway
+ ip address {{ vlan.svi_ip }} {{ vlan.mask }}
+ no shutdown
+{% endfor %}
